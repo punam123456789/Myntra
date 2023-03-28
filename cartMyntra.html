@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        #screen {
+            width: 100%;
+            /* height: 100%; */
+            /* border: 1px solid red; */
+
+        }
+
+        /* #screen>div:nth-child(1) {
+            margin-top: 20px;
+            margin-bottom: 20px;
+
+        } */
+        #navbar {
+            width: 95%;
+            height: 20px;
+            /* border: 1px solid red; */
+
+        }
+
+        #navbar>div:nth-child(1) {
+            width: 12%;
+            height: 100%;
+            /* border: 1px solid black; */
+            margin-left: 20px;
+        }
+
+        #navbar>div:nth-child(1)>img {
+            height: 70px;
+            width: 100px;
+        }
+
+        #navbar>div:nth-child(2) {
+            display: flex;
+            /* margin-top: 10px; */
+            margin-left: 1100px;
+            margin-bottom: 30px;
+        }
+
+        #navbar>div:nth-child(2)>div:nth-child(1)>img {
+            height: 30px;
+            width: 30px;
+        }
+
+        #info {
+            width: 95%;
+            margin: auto;
+            display: flex;
+            border-top: 1px solid grey;
+            margin-top: 50px;
+            
+
+        }
+        #pc{
+            /* border: 1px solid red; */
+            margin-left: 10px;
+        }
+
+        #sc {
+            /* border: 1px solid red; */
+            width: 95%;
+            margin: auto;
+            /* display: flex; */
+            /* border-top: 1px solid grey; */
+            margin-top: 50px;
+        }
+
+        #info>div:nth-child(1) {
+            width: 100%;
+            /* height: 700px; */
+            /* border: 1px solid red; */
+        }
+
+        #info>div:nth-child(2) {
+            width: 80%;
+            height: 700px;
+            /* border: 1px solid red; */
+        }
+
+
+        #cart>div:nth-child(1) {
+            border: 1px solid grey;
+            width: 680px;
+            height: 60px;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        #cart>div:nth-child(1)>h4 {
+            margin-left: 20px;
+            margin-top: 20px;
+
+        }
+
+        #cart>div:nth-child(1)>div {
+            margin-left: 200px;
+            /* height: 20px; */
+            margin-top: 20px;
+
+            /* margin-bottom: 200px; */
+            /* border: 1px solid red; */
+            /* margin: 0px 20px 200px 500px; */
+        }
+
+        #cart>div:nth-child(2)>div {
+            margin-left: 20px;
+            margin-top: 10px;
+
+        }
+
+        #cart>div:nth-child(2) {
+            border: 1px solid grey;
+            margin-top: 10px;
+            width: 680px;
+
+
+        }
+
+        #cart>div:nth-child(2)>div:nth-child(1)>div:nth-child(1)>img {
+            width: 20px;
+            height: 20px;
+            margin-bottom: 10px;
+
+        }
+
+        #cart>div:nth-child(2)>div:nth-child(1) {
+            display: flex;
+            /* justify-content: space-evenly; */
+        }
+
+        #cart>div:nth-child(2)>div:nth-child(1)>div:nth-child(2) {
+            margin-bottom: 10px;
+            margin-left: 10px;
+
+        }
+
+        #cart>div:nth-child(2)>div:nth-child(3) {
+            margin-bottom: 10px;
+        }
+
+        #cart>div:nth-child(3) {
+            border: 1px solid grey;
+            margin-top: 10px;
+            width: 680px;
+            display: flex;
+        }
+
+        #cart>div:nth-child(3)>div:nth-child(2) {
+            margin-top: 15px;
+            margin-left: 10px;
+            margin-bottom: 15px;
+            /* border: 1px solid red; */
+        }
+
+        #cart>div:nth-child(4) {
+            /* border: 1px solid grey; */
+            margin-top: 20px;
+            width: 680px;
+            display: flex;
+            /* height: 200px; */
+
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(1) {
+            margin-left: 10px;
+            margin-top: 5px;
+            width: 50px;
+            /* border: 1px solid red; */
+
+
+
+
+
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(2) {
+            margin-left: 5px;
+            display: flex;
+            font-size: medium;
+            width: 800px;
+            /* border: 1px solid red; */
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(3) {
+
+            display: flex;
+            justify-content: space-between;
+            height: 50px;
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(3)>div:nth-child(1) {
+
+            /* border-right: 1px solid grey; */
+            margin-left: 200px;
+            height: 50px;
+            margin-right: 10px;
+            font-size: small;
+
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(3)>div:nth-child(2) {
+
+            /* border: 1px solid grey; */
+            margin-left: 200px;
+            height: 50px;
+            font-size: small;
+
+        }
+
+        #cart>div:nth-child(4) {
+            width: 300px;
+            height: 80px;
+            /* display: flex; */
+        }
+
+        #cart>div:nth-child(4)>div:nth-child(2) {
+
+
+            display: flex;
+            /* margin-top: 10px; */
+        }
+
+        #cart>div:nth-child(4)>img {
+            height: 100px;
+            width: 100px;
+            /* border: 1px solid red; */
+        }
+
+        #cart>div:nth-child(5) {
+            display: flex;
+            border: 1px solid gray;
+            width: 680px;
+
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(1)>div:nth-child(2)>img {
+            height: 150px;
+            /* border: 1px solid red; */
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(2) {
+            margin-top: 20px;
+            margin-left: 10px;
+
+
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(3) {
+            margin-left: 20px;
+            /* border: 1px solid red; */
+            /* display: flex; */
+
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(2)>div:nth-child(5) {
+            display: flex;
+            margin-top: 10px;
+            /* border: 1px solid red; */
+
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(2)>div:nth-child(5)>img {
+
+            height: 30px;
+            width: 30px;
+            /* border: 1px solid red; */
+
+        }
+
+        #cart>div:nth-child(5)>div:nth-child(2)>div:nth-child(3) {
+            display: flex;
+            margin-top: 10px;
+            /* border: 1px solid red; */
+            /* justify-content: space-evenly; */
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(2)>div:nth-child(3) {
+            display: flex;
+            /* border: 1px solid red; */
+            /* justify-content: space-evenly; */
+        }
+
+        #cart>div:nth-child(6) {
+            display: flex;
+            border: 1px solid gray;
+            width: 680px;
+            margin-top: 10px;
+
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(1)>div:nth-child(2)>img {
+            height: 150px;
+            /* border: 1px solid red; */
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(2) {
+            margin-top: 20px;
+            margin-left: 10px;
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(3)>div {
+            /* margin-left: 20px; */
+            /* border: 1px solid red; */
+            /* display: flex; */
+
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(2)>div:nth-child(5) {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #cart>div:nth-child(6)>div:nth-child(2)>div:nth-child(5)>img {
+            /* border: 1px solid red; */
+            width: 30px;
+            height: 30px;
+
+        }
+
+        #cart>div:nth-child(7) {
+            border: 1px solid grey;
+            width: 680px;
+            height: 30px;
+            margin-top: 20px;
+            display: flex;
+        }
+
+        #cart>div:nth-child(7)>img {
+            height: 30px;
+
+        }
+
+        #cart>div:nth-child(7)>div {
+            margin-top: 10px;
+            margin-left: 5px;
+
+        }
+
+
+        /* #cart>div:nth-child(5)>div:nth-child(5) {
+            display: flex;
+        } */
+
+        /* #cart>div:nth-child(4)>div:nth-child(4) {
+
+            border: 1px solid grey;
+            margin-left: 180px;
+            margin-right: 30px;
+            height: 50px;
+        } */
+        #cart>div:nth-child(5)>div:nth-child(2)>div:nth-child(3)>div:nth-child(1)>select {
+            /* margin-top: 40px; */
+
+        }
+
+        /* #cart>div:nth-child(5)>div:nth-child(2)>div:nth-child(3)>div:nth-child(2)>select{
+            margin-left: 80px;
+            border: 1px solid red;
+            margin-bottom: 100px
+
+        } */
+        #order {
+            border-bottom: 1px solid grey;
+            width: 400px;
+            margin-bottom: 10px;
+            /* margin: auto; */
+            /* border: 1px solid red; */
+
+        }
+
+        #order>div:nth-child(1) {
+            margin-left: 15px;
+            font-size: small;
+            margin-top: 20px;
+        }
+
+        #order>div:nth-child(2)>div>img {
+            /* border: 1px solid red; */
+            height: 30px;
+
+
+        }
+
+        #order>div:nth-child(2) {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        #order>div:nth-child(2)>div:nth-child(2) {
+            margin-left: 10px;
+            /* border: 1px solid red; */
+        }
+
+        #order>div:nth-child(2)>div:nth-child(3) {
+            margin-left: 90px;
+
+
+        }
+
+        #gift {
+            width: 400px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid grey;
+
+        }
+
+        #gift>div:nth-child(1) {
+            font-size: small;
+            margin-left: 15px;
+            margin-top: 20px;
+            border: none;
+            background-color: papayawhip;
+            /* height: 100px; */
+            /* border-bottom: 1px solid grey; */
+            margin-bottom: 20px;
+
+
+
+        }
+
+        #gift>div:nth-child(1)>div:nth-child(2) {
+            display: flex;
+            /* border: 1px solid red; */
+
+        }
+
+        #gift>div:nth-child(1)>div:nth-child(2)>div:nth-child(2) {
+            /* border: 1px solid red; */
+            margin-left: 10px;
+        }
+
+
+        #gift>div:nth-child(1)>div:nth-child(2)>div>img {
+            /* border: 1px solid red; */
+            height: 90px;
+        }
+
+        #gift>div:nth-child(1)>div:nth-child(2)>div>h5 {
+            /* border: 1px solid red; */
+            margin-top: 10px;
+
+        }
+
+        #price {
+            width: 400px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid grey;
+
+        }
+
+        #price>div:nth-child(1) {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+
+        #price>div:nth-child(2) {
+            margin-left: 15px;
+
+
+        }
+
+        #price>div:nth-child(2)>div {
+            margin-bottom: 5px;
+        }
+
+        #price>div:nth-child(2)>div:nth-child(1) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price>div:nth-child(2)>div:nth-child(2) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price>div:nth-child(2)>div:nth-child(3) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price>div:nth-child(2)>div:nth-child(4) {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #price>div:nth-child(2)>div:nth-child(4)>h4 {
+            margin-left: 100px;
+
+        }
+
+        #ammount>div:nth-child(1) {
+            display: flex;
+            /* border: 1px solid red; */
+            justify-content: space-between;
+        }
+
+        #ammount>div:nth-child(1)>div:nth-child(2) {
+            /* border: 1px solid red; */
+            margin-right: 160px;
+
+
+        }
+
+        #ammount>div:nth-child(1)>div:nth-child(1) {
+            /* border: 1px solid red; */
+            margin-left: 15px;
+            margin-bottom: 15px;
+            /* background-color: red; */
+
+
+        }
+
+        #ammount>div:nth-child(2)>div {
+            justify-content: center;
+            /* border: 1px solid red; */
+            margin-left: 10px;
+            /* margin-bottom: 10px; */
+            /* background-color: red; */
+
+
+
+
+        }
+
+        #ammount>div:nth-child(2)>div>button {
+            border: 1px solid rgb(180, 13, 91);
+            height: 50px;
+            width: 400px;
+            background-color: rgb(231, 21, 84);
+
+        }
+        #like>div:nth-child(1){
+            /* border-top: 1px solid grey; */
+            width: 95%;
+            height: 60px;
+            margin-top: 50px;
+            margin-left: 30px;
+            /* background-color: rgb(236, 224, 226); */
+        }
+        #like{
+            width: 90%;
+            background-color: rgb(236, 224, 226);
+            margin-left: 10px;
+            border-top: 1px solid grey;
+            margin-top: 50px;
+
+        }
+        #like>div:nth-child(2){
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+
+        /* #price>div:nth-child(2)>div:nth-child(4)> */
+    </style>
+</head>
+
+<body>
+
+    <div id="screen">
+        <div id="navbar">
+            
+            <div>
+                <img src="data:image/jpeg;base64,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"
+                    alt="mylogo" />
+            </div>
+            <div>
+                <div>
+                    <img src="https://constant.myntassets.com/checkout/assets/img/sprite-secure.png" alt="img">
+                </div>
+                <div>
+                    <p>100% <b>S E C U R E</b></p>
+
+                </div>
+
+            </div>
+            <!-- <div>
+                <center>
+                    <P><b>
+                            <font color="green">BAG</font>--------ADDRESS----------PAYMENT
+                        </b></P>
+                </center>
+            </div> -->
+        </div>
+        <div>
+            <center>
+                <P><b>
+                        <font color="green"><small><u>BAG</u></font> ---------- ADDRESS ---------- PAYMENT
+                        </small>
+                    </b></P>
+            </center>
+        </div>
+        <div id="sc">
+            <div id="info">
+                <div id="cart">
+                    <div>
+                        <!-- 1 -->
+                        <h4>Check delivery time & services </h4>
+                        <div>
+                            <!-- <input placeholder="ENTER PIN CODE" /> -->
+                            <button>
+                                <font color="red">ENTER PIN CODE</font>
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 2 -->
+                        <div>
+                            <div>
+                                <img src="https://static.thenounproject.com/png/1253176-200.png" alt="img">
+                            </div>
+                            <div>
+                                <h4>Available Offers</h4>
+                            </div>
+                        </div>
+                        <div>
+                            <ul>
+                                <li>
+                                    <font color="grey">Get up to Rs 500 Cashback on CRED Pay UPI</font>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <p>
+                                <font color="red">Show More</font>
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 3 -->
+                        <div>
+                            <img src="https://constant.myntassets.com/checkout/assets/img/ship-free.webp" alt="img">
+                        </div>
+                        <div>
+                            <p>Yay!<b> No convenience fee </b>on this order.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 4 -->
+                        <div>
+                            <input type="checkbox" checked="checked" />
+
+                        </div>
+                        <div>
+                            <p><b> <small>2/2 ITEMS SELECTED</small></b></p>
+                        </div>
+
+                        <div>
+                            <div><b> <small>REMOVE</small></b></div>
+                            <div><b><small>MOVE TO WISHLIST</small></b></div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 5 -->
+                        <div>
+                            <div>
+                                <input type="checkbox" checked="checked" />
+                            </div>
+                            <div>
+
+                                <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/8923841/2019/6/3/736b9f2c-3a49-41a9-828c-1e0218b62e431559550212164-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-1.jpg"
+                                    alt="img">
+                            </div>
+                        </div>
+                        <div>
+                            <!-- 2 -->
+
+                            <div>
+                                <h4>Minions by Kook N Keech</h4>
+                            </div>
+                            <div>
+                                <p>
+                                    <font color="grey">Men Purple Boxy Fit Printed Round Neck Pure Cotton T-shirt</font>
+                                </p>
+                                <p><small>
+                                        <font color="grey">Sold by: Truecom Retail</font>
+                                    </small> </p>
+                            </div>
+                            <div>
+                                <!-- 3 -->
+
+                                <div>
+                                    <select>
+                                        <option value="By the way"><b>Size:S</b></option>
+                                        <option value="Talk to you later">M</option>
+
+                                    </select>
+
+
+                                </div>
+                                <div>
+                                    <select>
+                                        <option value="By the way">Qty:1</option>
+                                        <option value="Talk to you later">2</option>
+
+                                    </select>
+
+
+                                </div>
+                            </div>
+                            <div>
+                                <p><b>₹659 </b><del> ₹1099</del>
+                                    <font color="red">(40% OFF)</font>
+                                </p>
+                            </div>
+                            <div>
+                                <img src="https://static.thenounproject.com/png/4376313-200.png" alt="img">
+                                <p><b>14 days </b><small>return available</small></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- 6 -->
+                        <div>
+                            <!-- 1 -->
+                            <div>
+                                <input type="checkbox" checked="checked" />
+                            </div>
+                            <div>
+
+                                <img src="https://assets.myntassets.com/f_webp,dpr_1.0,q_60,w_210,c_limit,fl_progressive/assets/images/8923841/2019/6/3/736b9f2c-3a49-41a9-828c-1e0218b62e431559550212164-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-1.jpg"
+                                    alt="img">
+                            </div>
+                        </div>
+                        <div>
+                            <!-- 2 -->
+
+                            <div>
+                                <h4>Minions by Kook N Keech</h4>
+                            </div>
+                            <div>
+                                <p>
+                                    <font color="grey">Men Purple Boxy Fit Printed Round Neck Pure Cotton T-shirt</font>
+                                </p>
+                                <p><small>
+                                        <font color="grey">Sold by: Truecom Retail</font>
+                                    </small> </p>
+                            </div>
+                            <div>
+
+                                <div>
+                                    <select>
+                                        <option value="By the way">Size:S</option>
+                                        <option value="Talk to you later">M</option>
+
+                                    </select>
+
+
+                                </div>
+                                <div>
+                                    <select>
+                                        <option value="By the way">Qty:1</option>
+                                        <option value="Talk to you later">2</option>
+
+                                    </select>
+
+
+                                </div>
+                            </div>
+                            <div>
+                                <p><b>₹659 </b><del> ₹1099</del>
+                                    <font color="red">(40% OFF)</font>
+                                </p>
+                            </div>
+                            <div>
+                                <img src="https://static.thenounproject.com/png/4376313-200.png" alt="img">
+                                <p><b>14 days </b><small>return available</small></p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                    <div>
+                        <!-- 7 -->
+                        <img src="https://img.icons8.com/material-sharp/1x/wish-list.png" alt="img">
+                        <div>
+                            <a href="">Add More From Whishlist</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="pc">
+                    <!-- 2 -->
+                    <div id="order">
+                        <div>
+                            <!-- 1 -->
+                            <P><B>COUPONS</B></P>
+
+                        </div>
+                        <div>
+                            <!-- 2 -->
+                            <div>
+                                <img src="https://t4.ftcdn.net/jpg/01/76/67/71/240_F_176677110_eAhDHZl92oC97F7k6UlF5zfChzXq5J7Z.jpg"
+                                    alt="img">
+                            </div>
+                            <div>
+                                <h4>Apply Coupons</h4>
+                            </div>
+                            <div>
+                                <button>
+                                    <font color="red">APPLY</font>
+                                </button>
+                            </div>
+                        </div>
+                        <!-- <div>
+                        3
+                        <P><B>GIFTING</B></P>
+
+                    </div> -->
+
+                    </div>
+                    <div id="gift">
+                        <div>
+                            <!-- 1 -->
+
+                            <P><B>GIFTING & PERSONATIONALISATION</B></P>
+                            <div>
+                                <div>
+                                    <img src="https://constant.myntassets.com/checkout/assets/img/gift-big.webp"
+                                        alt="img">
+                                </div>
+                                <div>
+                                    <h4>Buying for a loved one?</h4>
+                                    <p>Gift wrap and personalised message on card,<br /> Only for ₹ 25 </p>
+
+                                    <h5>
+                                        <font color="red"><b>ADD GIFT WRAP</b></font>
+                                    </h5>
+                                </div>
+
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div id="price">
+                        <div>
+                            <!-- 1 -->
+                            <P><B><small>PRICE DETAILS(2 Items)</small></B></P>
+
+                        </div>
+                        <div>
+                            <!-- 2 -->
+                            <div>
+                                <!-- 1 -->
+                                <p>
+                                    <font color="grey">Total MRP</font>
+                                </p>
+                                <p>
+                                    <font color="grey">₹2,198</font>
+                                </p>
+                            </div>
+
+                            <div>
+                                <p>
+                                    <font color="grey">Discount on MRP</font>
+                                </p>
+                                <p>
+                                    <font color="green">-₹880</font>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <font color="grey">Coupon Discount</font>
+                                </p>
+                                <p>
+                                    <font color="red">Apply Coupon</font>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <font color="grey">Convenience Fee <font color="red"> <small><b>Known More</b>
+                                            </small>
+                                        </font>
+                                    </font>
+                                <h4>
+                                    <font color="grey"><del>₹99</del>
+                                        <font color="green">Free</font>
+                                    </font>
+                                </h4>
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="ammount">
+                        <div>
+                            <div>
+                                <p>
+                                    <font color="black"><b>Total Amount</b></font>
+                                </p>
+                            </div>
+                            <div>
+                                <p>
+                                    <font color="black"><b>₹1,318</b></font>
+                                </p>
+
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+
+                                <button type="button"> PLACE ORDER</button>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="like">
+                <div>
+
+                    <h3>You may also like</h3>
+                </div>
+                <div>
+                    
+                    <div>
+                        <img src="i1.jpg" alt="img">
+                    </div>
+                    <div>
+                        <img src="i2.jpg" alt="img">
+                    </div>
+                    <div>
+                        <img src="i3.jpg" alt="img">
+                    </div>
+                    <div>
+                        <img src="i4.jpg" alt="img">
+                    </div>
+                    <div>
+                        <img src="i5.jpg" alt="img">
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
