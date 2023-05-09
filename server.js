@@ -31,7 +31,7 @@ function register(event) {
                     }
                     Ls.push(userdata);
                     localStorage.setItem("MyntraUsers", JSON.stringify(Ls))
-                    alert("Registration Successful")
+                    alert("Registration Successfull")
                     window.location.href="./login.html"
                     document.getElementById("username").value = ""
                     document.getElementById("useremail").value = ""

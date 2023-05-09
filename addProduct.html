@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AddProduct</title>
+    <title>Addjwell</title>
 </head>
 <body>
-    <form onsubmit="addProduct(event)">
+    <form onsubmit="addRingProduct(event)">
 
         <label>Product Image url</label><br />
-        <input type="text" id="pimage" /><br />
+        <input type="text" id="ringimage" /><br />
         <label>Product Name</label><br />
-        <input type="text" id="pname" /><br />
+        <input type="text" id="ringname" /><br />
         <label>Product Price</label><br />
-        <input type="text" id="pprice" /><br />
+        <input type="text" id="ringprice" /><br />
 
       
 
@@ -23,11 +23,11 @@
 
     </form>
     <script>
-        function addProduct(event){
+        function addRingProduct(event){
             event.preventDefault();
-            var proImage = document.getElementById("pimage").value;
-            var proName = document.getElementById("pname").value;
-            var proPrice = document.getElementById("pprice").value;
+            var proImage = document.getElementById("ringimage").value;
+            var proName = document.getElementById("ringname").value;
+            var proPrice = document.getElementById("ringprice").value;
            
 
             var product = {proImage, proName ,proPrice};
@@ -40,3 +40,4 @@
     </script>
 </body>
 </html>
+
