@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #singleProduct {
+        #singlePro {
             width: 100%;
         }
 
@@ -26,20 +26,69 @@
 </head>
 
 <body>
+    <!-- <h1>hii</h1> -->
     <div id="singleProduct"></div>
 
     <script>
         window.onload = function () {
+             // alert("working")
+             var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+          
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                
+                // var button = '<button onclick="logout()">Logout</button>'
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+            //  else {
+            //     alert("current user absent")
+            // }
+
+
             var product = JSON.parse(localStorage.getItem("current-product"));
 
             var divToAppendProduct = document.getElementById("singleProduct");
-            var structure = `<div id='singlePro'> <img src='${product.proImage}' /> <br/> <h1>${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart()'>Add to cart</button> </div>`
+            var structure = `<div id='singlePro'> <img src='${product.proImage}' /> <br/> <h1>${product.proName}</h1><br/> <p>${product.proPrice}</p><br/> <button onclick='addCart(${JSON.stringify(product)})'>Add to cart</button> </div>`
             console.log(structure, "here");
+            
             divToAppendProduct.innerHTML = structure;
         }
-        function addCart(){
+        function addCart(product){
             alert("Adding to cart")
+            var currentUser=JSON.parse(localStorage.getItem("MyntraCurrentUser"));
+            var userData=JSON.parse(localStorage.getItem("MyntraUsers"));
+            var flagforUser=false;
+            for(var i=0;i<userData.length;i++){
+                if(currentUser.userEmail===userData[i].userEmail)
+                {
+                    if(userData[i].cartProducts==undefined)
+                    {
+                        userData[i].cartProducts=[product];
+                    }else
+                    {
+                        userData[i].cartProducts.push(product);
+
+                    }
+                    alert("product added to cart")
+                    window.location.href='./Cart.html';
+                }
+            }
+            localStorage.setItem("MyntraUsers",JSON.stringify(userData));
         }
+
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("MyntraCurrentUser")
+            window.location.reload()
+
+
+        }
+
     </script>
 </body>
 </html>

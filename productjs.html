@@ -136,6 +136,7 @@
         #icons>div>i {
             padding-left: 10px;
             align-items: center;
+            color: #ff3f6c;
         }
 
         #icons>div>h4 {
@@ -373,7 +374,7 @@
             font-size: 17px;
         }
 
-        #Products {
+        #products {
             width: 100%;
             height: 100%;
             border: 2px solid black;
@@ -383,7 +384,7 @@
 
         }
 
-        #Products>div {
+        #products>div {
             width: 18%;
             height: 17%;
             border: 1px solid black;
@@ -392,7 +393,7 @@
             margin-bottom: 10px;
         }
 
-        #Products>div>img {
+        #products>div>img {
             width: 100%;
             height: 200px;
         }
@@ -434,16 +435,19 @@
                 </form>
             </div>
             <div id="icons">
-                <div>
+
+                <div id="switch">
                     <i class="fa-regular fa-user "></i>
                     <h5>Profile</h5>
                 </div>
+                
+                <div id="logout"></div>
                 <div>
                     <i class="fa-regular fa-heart "></i>
                     <h5>Wishlist</h5>
                 </div>
                 <div>
-                    <i class="fa-regular fa-bag-shopping "></i>
+                    <i class="fa-solid fa-bag-shopping"></i>
                     <h5 style="padding-left: 5px;">Bag</h5>
                 </div>
             </div>
@@ -553,7 +557,7 @@
                 </div>
 
             </div>
-            <div id="Products"></div>
+            <div id="products"></div>
 
 
 
@@ -564,30 +568,45 @@
     </div>
     <script>
         window.onload = function () {
-            // alert("hiii")
+            // alert("working")
+            var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+            // console.log(currentUser,"current user");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                // console.log(divfromHtml, "divfromhtml");
+                // var h1=document.createElement("h1");
 
-            var divToShowProducts = document.getElementById("Products");
-            var finalData = "";
-
-            var productsFromLS = JSON.parse(localStorage.getItem("Products"))
-            for (var i = 0; i < productsFromLS.length; i++) {
-                finalData += `<div onclick='redirect(${JSON.stringify(productsFromLS[i])})' id='singlePro'>
-                                     
-                                    <img src=${productsFromLS[i].proImage} />
-                                     <h3>${productsFromLS[i].proName}</h3>
-                                      <p> ${productsFromLS[i].proPrice}</p>
-                             </div>`;
+                // divfromHtml.append(h1)
+                var button = '<button onclick="logout()">Logout</button>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
             }
+            //  else {
+            //     alert("current user absent")
+            // }
 
-            console.log(finalData, "finalData here")
-
-            divToShowProducts.innerHTML = finalData;
+            var jwellerydiv = document.getElementById("products");
+            var finaldata = "";
+            var productfromls = JSON.parse(localStorage.getItem("Products"));
+            for (var i = 0; i < productfromls.length; i++) {
+                finaldata += `<div onclick='redirect(${JSON.stringify(productfromls[i])})' id="singlepro"><img src=${productfromls[i].proImage} /> <h1>${productfromls[i].proName}</h1> <p>${productfromls[i].proPrice}</p></div>`
+            }
+            console.log(finaldata, "finaldta here");
+            jwellerydiv.innerHTML = finaldata;
         }
-        function redirect(product){
+        function redirect(product) {
             var singleProduct = JSON.stringify(product);
             // alert("working");
-            localStorage.setItem("current-product",singleProduct);
+            localStorage.setItem("current-product", singleProduct);
             window.location.href = './SingleProduct.html'
+        }
+        function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("MyntraCurrentUser")
+            window.location.reload()
         }
     </script>
 </body>
