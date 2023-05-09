@@ -316,65 +316,9 @@
             margin-top: -12px;
         }
 
+       
+
         #product {
-            width: 80%;
-            /* height:5000px; */
-            /* border:1px solid green; */
-            /* padding-top: 40px; */
-            border-left: 1px solid rgb(217, 212, 212);
-            border-bottom: 1px solid rgb(217, 212, 212);
-            /* margin-left: 18%; */
-        }
-
-        #productinfo {
-            width: 96%;
-            /* height:453px; */
-            /* border:1px solid red; */
-            margin: auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-        }
-
-        #productinfo>div {
-            width: 19%;
-            /* height: 500px; */
-            /* border:1px solid pink; */
-            margin-bottom: 10px;
-        }
-
-        #productinfo>div>img {
-            /* height: 350px; */
-            width: 100%;
-            margin-bottom: 10px;
-        }
-
-        #productinfo>div>h1 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        #productinfo>div>p {
-            font-size: 16px;
-            color: grey;
-            margin-bottom: 6px;
-            word-spacing: 2px;
-        }
-
-        #productinfo>div>p>b {
-            color: black;
-        }
-
-        #productinfo>div>p>del {
-            font-size: 17px;
-        }
-
-        #productinfo>div>p>span {
-            color: red;
-            font-size: 17px;
-        }
-
-        #products {
             width: 100%;
             height: 100%;
             border: 2px solid black;
@@ -384,7 +328,7 @@
 
         }
 
-        #products>div {
+        #product>div {
             width: 18%;
             height: 17%;
             border: 1px solid black;
@@ -393,7 +337,7 @@
             margin-bottom: 10px;
         }
 
-        #products>div>img {
+        #product>div>img {
             width: 100%;
             height: 200px;
         }
@@ -588,18 +532,19 @@
             //     alert("current user absent")
             // }
 
-            var jwellerydiv = document.getElementById("products");
+            var productdiv = document.getElementById("products");
             var finaldata = "";
             var productfromls = JSON.parse(localStorage.getItem("Products"));
             for (var i = 0; i < productfromls.length; i++) {
                 finaldata += `<div onclick='redirect(${JSON.stringify(productfromls[i])})' id="singlepro"><img src=${productfromls[i].proImage} /> <h1>${productfromls[i].proName}</h1> <p>${productfromls[i].proPrice}</p></div>`
             }
             console.log(finaldata, "finaldta here");
-            jwellerydiv.innerHTML = finaldata;
+            productdiv.innerHTML = finaldata;
+            // jwellerydiv.innerHTML = jwelleryfromls;
         }
         function redirect(product) {
             var singleProduct = JSON.stringify(product);
-            // alert("working");
+            alert("working");
             localStorage.setItem("current-product", singleProduct);
             window.location.href = './SingleProduct.html'
         }
