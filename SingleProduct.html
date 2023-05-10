@@ -32,22 +32,22 @@
     <script>
         window.onload = function () {
              // alert("working")
-             var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+            //  var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
           
-            if (!!currentUser) {
-                // alert(currenUser,"username")
-                var logoutDiv = document.getElementById("logout")
-                var divfromHtml = document.getElementById("switch");
+            // if (!!currentUser) {
+            //     // alert(currenUser,"username")
+            //     var logoutDiv = document.getElementById("logout")
+            //     var divfromHtml = document.getElementById("switch");
                 
-                // var button = '<button onclick="logout()">Logout</button>'
-                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
-                var name = `<h1>${currentUser.userName}</h1>`;
-                divfromHtml.innerHTML = name;
-                logoutDiv.innerHTML = button;
-            }
-            //  else {
-            //     alert("current user absent")
+            //     // var button = '<button onclick="logout()">Logout</button>'
+            //     var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+            //     var name = `<h1>${currentUser.userName}</h1>`;
+            //     divfromHtml.innerHTML = name;
+            //     logoutDiv.innerHTML = button;
             // }
+            // //  else {
+            // //     alert("current user absent")
+            // // }
 
 
             var product = JSON.parse(localStorage.getItem("current-product"));

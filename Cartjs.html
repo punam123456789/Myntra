@@ -22,8 +22,7 @@
 
         <div class="c-navbar">
             <a href="./index.html" class="c-logo">
-                <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2021/01/30/913689-1.1.4-2.jpg?im=Resize=(1280,720)"
-                alt="sreen-logo" />
+                <img src="/images/myntra-logo.png" alt="">
 
             </a>
             <div class="checkout-step">
@@ -106,67 +105,70 @@
 
                     <!-- selected product Information -->
 
-                    <div class="s-p-info">
+                    <div id="finalcart">
+                        <div class="s-p-info">
 
-                        <div class="s-p-img">
-                            <img src="https://assets.myntassets.com/w_111,h_148,dpr_1.3499999046325684,q_60,c_limit,fl_progressive/h_148,q_60,w_111/v1/assets/images/8923841/2019/6/3/736b9f2c-3a49-41a9-828c-1e0218b62e431559550212164-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-1.jpg"
-                                alt="">
-                        </div>
-                        <div class="s-p-content">
-                            <h1>Minions by Kook N Keech</h1>
-                            <p>Men Purple Boxy Fit Printed Round Neck Pure Cotton T-shirt</p>
-                            <p>Sold by: Truecom Retail</p>
-                            <div class="select-size-qty">
-                                <div class="select-size">
-                                    <label for="size">Size: </label>
-                                    <select name="size" id="cars">
-                                        <option value="S">S</option>
-                                        <option value="M">M</option>
-                                        <option value="L">L</option>
-                                        <option value="XL">XL</option>
-                                        <option value="XXL">XXL</option>
-
-                                    </select>
+                            <div class="s-p-img" id="product-img">
+                                <img src="https://assets.myntassets.com/w_111,h_148,dpr_1.3499999046325684,q_60,c_limit,fl_progressive/h_148,q_60,w_111/v1/assets/images/8923841/2019/6/3/736b9f2c-3a49-41a9-828c-1e0218b62e431559550212164-Minions-by-Kook-N-Keech-Men-Purple-Printed-Round-Neck-T-shir-1.jpg"
+                                    alt="">
+                            </div>
+                            <div class="s-p-content">
+                                <h1 id="product-name"> </h1>
+                                <p>Men Boxy Fit Printed Round Neck Pure Cotton Shirt</p>
+                                <p>Sold by: Truecom Retail</p>
+                                <div class="select-size-qty">
+                                    <div class="select-size">
+                                        <label for="size">Size: </label>
+                                        <select name="size" id="cars">
+                                            <option value="S">S</option>
+                                            <option value="M">M</option>
+                                            <option value="L">L</option>
+                                            <option value="XL">XL</option>
+                                            <option value="XXL">XXL</option>
+    
+                                        </select>
+                                    </div>
+                                    <div class="select-qty">
+                                        <label for="Qty">Qty: </label>
+                                        <select name="quantity" id="cars">
+                                            <option value="1">1</option>
+                                            <option value="2">2</option>
+                                            <option value="3">3</option>
+                                            <option value="4">4</option>
+                                            <option value="5">5</option>
+                                            <option value="6">6</option>
+                                            <option value="7">7</option>
+                                            <option value="8">8</option>
+                                            <option value="9">9</option>
+                                            <option value="10">10</option>
+    
+                                        </select>
+                                    </div>
+    
+    
                                 </div>
-                                <div class="select-qty">
-                                    <label for="Qty">Qty: </label>
-                                    <select name="quantity" id="cars">
-                                        <option value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="3">3</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                        <option value="10">10</option>
-
-                                    </select>
+    
+                                <div class="c-price-info">
+                                    <span class="c-price" id="product-price">₹ </span>
+                                    <span class="c-strike-price">₹1,099</span>
+                                    <span class="c-percentage">40% OFF</span>
+    
                                 </div>
-
-
+    
+                                <div class="c-return-policy">
+                                    <span><i class="fa-regular fa-circle-left"></i></span>
+                                    <p><span>14 days</span>return available</p>
+                                </div>
                             </div>
-
-                            <div class="c-price-info">
-                                <span class="c-price">₹659</span>
-                                <span class="c-strike-price">₹1,099</span>
-                                <span class="c-percentage">40% OFF</span>
-
+                            <div class="close-button">
+                                <i class="fa-solid fa-xmark"></i>
                             </div>
-
-                            <div class="c-return-policy">
-                                <span><i class="fa-regular fa-circle-left"></i></span>
-                                <p><span>14 days</span>return available</p>
-                            </div>
+    
+    
+    
                         </div>
-                        <div class="close-button">
-                            <i class="fa-solid fa-xmark"></i>
-                        </div>
-
-
-
                     </div>
+                   
 
                     <div class="ex-bag">
                         <div class="bag-img">
@@ -252,7 +254,7 @@
 
                         </div>
                         <div class="place-order-btn">
-                            <button>Place Order</button>
+                            <button onclick="window.location.href='./successpage.html'">Place Order</button>
                         </div>
 
 
@@ -555,7 +557,7 @@
         window.onload = function () {
             // alert("working")
 
-            var currentUser = JSON.parse(localStorage.getItem("myntraCurrentUser"))
+            var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
             // console.log(currentUser,"current user");
             if (!!currentUser) {
                 // alert(currenUser,"username")
@@ -563,20 +565,105 @@
                 var divfromHtml = document.getElementById("switch");
                 // console.log(divfromHtml, "divfromhtml");
                 // var h1=document.createElement("h1");
-                // h1.innerText="Mayuri"
-                // divfromHtml.append(h1)
+                
 
                 var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout() " class="logout-button-txt">Logout</button></span>'
                 var name = `<div>${currentUser.userName}</div>`;
-                divfromHtml.innerHTML = name;
-                logoutDiv.innerHTML = button;
+                // divfromHtml.innerHTML = name;
+                // logoutDiv.innerHTML = button;
                 // logoutDiv.innerHTML = icon
             }
             // else {
             //     alert("current user absent")
             // }
 
+            var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+            var userdata = JSON.parse(localStorage.getItem("MyntraUsers"))
+            var divToAppendProductImage = document.getElementById("product-img")
+            var divToAppendProductName = document.getElementById("product-name")
+            var divToAppendProductPrice = document.getElementById("product-price")
+            var divToAppendAllProducts = document.getElementById("finalcart")
 
+
+            var products;
+            for (var i = 0; i < userdata.length; i++) {
+                if (currentUser.userEmail == userdata[i].userEmail) {
+                    products = userdata[i].cartProducts
+                }
+            }
+            var finalImage = ""
+            var finalName = ""
+            var finalPrice = ""
+            var finalProductCart  = "";
+
+            for (var i = 0; i < products.length; i++) {
+                finalProductCart +=`<div class="s-p-info">
+
+<div class="s-p-img" id="product-img">
+    <img src="${products[i].proImage}"
+        alt=""> 
+</div>
+<div class="s-p-content">
+    <h1 id="product-name">  ${products[i].proName} </h1>
+    <p>Men Boxy Fit Printed Round Neck Pure Cotton Shirt</p>
+    <p>Sold by: Truecom Retail</p>
+    <div class="select-size-qty">
+        <div class="select-size">
+            <label for="size">Size: </label>
+            <select name="size" id="cars">
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+                <option value="XXL">XXL</option>
+
+            </select>
+        </div>
+        <div class="select-qty">
+            <label for="Qty">Qty: </label>
+            <select name="quantity" id="cars">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+                <option value="9">9</option>
+                <option value="10">10</option>
+
+            </select>
+        </div>
+
+
+    </div>
+
+    <div class="c-price-info">
+        <span class="c-price" id="product-price">₹${products[i].proPrice} </span>
+        <span class="c-strike-price">₹1,099</span>
+        <span class="c-percentage">40% OFF</span>
+
+    </div>
+
+    <div class="c-return-policy">
+        <span><i class="fa-regular fa-circle-left"></i></span>
+        <p><span>14 days</span>return available</p>
+    </div>
+</div>
+<div class="close-button">
+    <i class="fa-solid fa-xmark"></i>
+</div>
+
+
+
+</div>`
+            }
+
+            divToAppendProductImage.innerHTML = finalImage;
+            divToAppendProductName.innerHTML = finalName;
+            divToAppendProductPrice.innerHTML = finalPrice;
+            divToAppendAllProducts.innerHTML = finalProductCart;
         }
         function logout() {
             alert("Logout successful.")
