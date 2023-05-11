@@ -1,11 +1,344 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/43b779b2fa.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+         * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        #screen {
+            width: 100%;
+            /* border:3px solid red; */
+            height: 100px;
+            display: flex;
+            justify-content: space-around;
+            padding-top: 15px;
+            box-shadow: 5px 5px 15px #fbf9f9;
+            position: fixed;
+            top: 0;
+            background-color: white;
+            font-family: 'Roboto', sans-serif;
+            margin-bottom: 50px;
+            /* right: 0; */
+        }
+
+        #screen>div:nth-child(1) {
+            width: 10%;
+            height: 60px;
+            /* border:2px solid black; */
+        }
+
+        #screen>div:nth-child(1)>img {
+            text-align: center;
+            /* font-size: 70px; */
+            font-weight: 40px;
+            padding-left: 40px;
+            /* padding-top: 10px; */
+            color: mediumvioletred;
+            font-family: 'Josefin Sans', sans-serif;
+            height: 60px;
+            width: 150px;
+        }
+
+        #screen>div:nth-child(2) {
+            width: 45%;
+            height: 60px;
+            /* border: 2px solid black; */
+        }
+
+        #navbar {
+            width: 30%;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            /* justify-content: center; */
+            font-size: 13px;
+            word-spacing: 3px;
+            padding-top: 20px;
+        }
+
+        #nav>div>h3 {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 15px;
+        }
+
+        #screen>div:nth-child(3) {
+            width: 30%;
+            height: 60px;
+            padding-right: 30px;
+            /* border:2px solid black; */
+        }
+
+        #nav {
+            display: flex;
+        }
+
+        /* #screen-search >form>button> i{
+} */
+        #nav>form>button {
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        #nav>form {
+            display: flex;
+
+            border-radius: 10px;
+            background-color: rgb(241, 238, 238);
+            width: 80%;
+            height: 30px;
+            padding: 5px;
+            width: 90%;
+            margin-top: 15px;
+            padding-right: 50px;
+        }
+
+        #nav>form>input {
+            border: none;
+            background-color: rgb(241, 238, 238);
+            padding-left: 10px;
+            width: 100%;
+
+
+        }
+
+        #screen>div:nth-child(4) {
+            width: 15%;
+            height: 60px;
+
+
+            padding-right: 20px;
+            /* border:2px solid black; */
+        }
+
+        #icons {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        #icons>div {
+            padding-top: 15px;
+
+        }
+
+        #icons>div>i {
+            padding-left: 10px;
+            align-items: center;
+            color: #ff3f6c;
+        }
+
+        #icons>div>h4 {
+            margin-top: 5px;
+            /* text-align: center; */
+        }
+
+        #top {
+            margin-top: 110px;
+            height: 140px;
+            width: 100%;
+            /* border:1px solid red; */
+            display: flex;
+        }
+
+        #top-left {
+            width: 25%;
+            height: 100%;
+            padding-left: 20px;
+            /* border:1px solid blue; */
+        }
+
+        #top-left>p {
+            font-size: 22px;
+            color: rgb(82, 80, 80);
+            word-spacing: 5px;
+            line-height: 30px;
+        }
+
+        #top-left>p>b {
+            color: black;
+        }
+
+        #top-left>h1 {
+            font-size: 19px;
+            /* margin-top: 20px; */
+        }
+
+        #search {
+            width: 50%;
+            height: 100%;
+            /* border:1px solid blue; */
+            display: flex;
+        }
+
+        #search>div {
+            display: flex;
+            margin-top: 90px;
+            margin-left: 20px;
+        }
+
+        #search>div>div:nth-child(1)>p {
+            font-size: 14px;
+        }
+
+        #search>div>div:nth-child(2)>select {
+            border: none;
+            color: grey;
+        }
+
+        #search>div:nth-child(1) {
+            width: 10%;
+            height: 20px;
+            /* border:1px solid pink; */
+        }
+
+        #search>div:nth-child(2) {
+            width: 18%;
+            height: 20px;
+            /* border:1px solid pink; */
+        }
+
+        #search>div:nth-child(3) {
+            width: 8%;
+            height: 20px;
+            /* border:1px solid pink; */
+        }
+
+        #right {
+            display: flex;
+            height: 45px;
+            width: 25%;
+            border: 2px solid black;
+            margin-top: 80px;
+            margin-left: 320px;
+        }
+
+        #right>div:nth-child(1)>p {
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            color: grey;
+            margin-left: 10px;
+            margin-top: 8px;
+        }
+
+        #right>div:nth-child(1)>p>b {
+            color: black;
+        }
+
+        #right>div:nth-child(2)>select {
+            border: none;
+            color: grey;
+            margin-left: 60px;
+        }
+
+        #pbody {
+            width: 100%;
+            /* height: 1500px; */
+            border-top: 1px solid rgb(217, 212, 212);
+            display: flex;
+            /* border:2px solid red */
+        }
+
+        #filters {
+            width: 18%;
+            /* height: 1300px; */
+            /* border:1px solid red; */
+            border-right: 1px solid rgb(217, 212, 212);
+
+        }
+
+        #filters>div:nth-child(2)>h1>span>i {
+            font-size: 20px;
+            margin-left: 220px;
+            background-color: rgb(221, 218, 218);
+            box-shadow: 2px 2px 12px rgb(166, 153, 153);
+            border: none;
+        }
+
+        #filters>div:nth-child(4)>h1>span>i {
+            font-size: 20px;
+            margin-left: 220px;
+            background-color: rgb(221, 218, 218);
+            box-shadow: 2px 2px 12px rgb(166, 153, 153);
+            border: none;
+        }
+
+        #filters>div {
+            border-bottom: 1px solid rgb(217, 212, 212);
+            padding-bottom: 10px;
+            padding-left: 20px;
+        }
+
+        #filters>div>h1 {
+            font-size: 20px;
+            letter-spacing: 0.5px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #filters>div>p {
+            font-size: 20px;
+            color: rgb(91, 88, 88);
+            margin-bottom: 7px;
+            font-size: small;
+        }
+
+        #filters>div>p>span {
+            color: rgb(194, 191, 191);
+            font-size: 15px;
+        }
+
+        #filters>div>p>input {
+            height: 17px;
+            width: 17px;
+            margin-right: 15px;
+        }
+
+        #filters>div:nth-child(4)>p>span:nth-child(2) {
+            height: 40px;
+            width: 40px;
+            /* border:1px solid red; */
+            border-radius: 50%;
+            background-color: black;
+            color: black;
+            margin-right: 10px;
+            margin-top: -12px;
+        }
+
+       
+
+        #products {
+            width: 100%;
+            height: 100%;
+            border: 2px solid black;
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+
+        }
+
+        #products>div {
+            width: 18%;
+            height: 17%;
+            border: 1px solid black;
+            text-align: center;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        #products>div>img {
+            width: 100%;
+            height: 200px;
+        }
         #singlePro {
             width: 100%;
         }
@@ -26,26 +359,77 @@
 </head>
 
 <body>
+    <div id="main">
+        <div id="screen">
+            <div>
+                <img src="https://english.cdn.zeenews.com/sites/default/files/styles/zm_700x400/public/2021/01/30/913689-1.1.4-2.jpg?im=Resize=(1280,720)"
+                    alt="sreen-logo" />
+
+            </div>
+            <div id="navbar">
+                <div>
+                    <h3>MEN</h3>
+                </div>
+                <div>
+                    <h3>WOMEN</h3>
+                </div>
+                <div>
+                    <h3>KIDS</h3>
+                </div>
+                <div>
+                    <h3>HOME & LIVING</h3>
+                </div>
+                <div>
+                    <h3>BEAUTY</h3>
+                </div>
+                <div>
+                    <h3>STUDIO<sup style="color:red;">NEW</sup></h3>
+                </div>
+            </div>
+            <div id="nav">
+                <form>
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                    <input type="text" placeholder="Search for products,brands and more" />
+                </form>
+            </div>
+            <div id="icons">
+
+                <div id="switch">
+                    <i class="fa-regular fa-user "></i>
+                    <h5>Profile</h5>
+                </div>
+                
+                <div id="logout"></div>
+                <div>
+                    <i class="fa-regular fa-heart "></i>
+                    <h5>Wishlist</h5>
+                </div>
+                <div>
+                    <i class="fa-solid fa-bag-shopping"></i>
+                    <h5 style="padding-left: 5px;">Bag</h5>
+                </div>
+            </div>
+        </div>
     <!-- <h1>hii</h1> -->
     <div id="singleProduct"></div>
 
     <script>
         window.onload = function () {
-             // alert("working")
-            //  var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+              alert("working")
+              var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
           
-            // if (!!currentUser) {
-            //     // alert(currenUser,"username")
-            //     var logoutDiv = document.getElementById("logout")
-            //     var divfromHtml = document.getElementById("switch");
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
                 
-            //     // var button = '<button onclick="logout()">Logout</button>'
-            //     var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
-            //     var name = `<h1>${currentUser.userName}</h1>`;
-            //     divfromHtml.innerHTML = name;
-            //     logoutDiv.innerHTML = button;
-            // }
-            // //  else {
+                // var button = '<button onclick="logout()">Logout</button>'
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+            //  else {
             // //     alert("current user absent")
             // // }
 

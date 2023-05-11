@@ -556,7 +556,7 @@
                 </form>
             </div>
             <div id="screen-right-tags">
-                <div>
+                <div id="switch">
                     <i class="fa-regular fa-user "></i>
                     <h5>Profile</h5>
                 </div>
@@ -568,6 +568,8 @@
                     <i class="fa-regular fa-bag-shopping "></i>
                     <h5 style="padding-left: 5px;">Bag</h5>
                 </div>
+                 
+                <div id="logout"></div>
             </div>
         </div>
         <div id="product-main-heading">
@@ -736,6 +738,25 @@
 </body>
 <script>
     window.onload = function () {
+        alert("working")
+             var currentUser = JSON.parse(localStorage.getItem("MyntraCurrentUser"))
+          
+            if (!!currentUser) {
+                // alert(currenUser,"username")
+                var logoutDiv = document.getElementById("logout")
+                var divfromHtml = document.getElementById("switch");
+                
+                // var button = '<button onclick="logout()">Logout</button>'
+                var button = '<span class="lgbtn-wrap"><i class="fa-solid fa-arrow-right-from-bracket id=logout-icon"></i> <button onclick="logout()" class="logout-button-txt">Logout</button></span>'
+                var name = `<h1>${currentUser.userName}</h1>`;
+                divfromHtml.innerHTML = name;
+                logoutDiv.innerHTML = button;
+            }
+            // //  else {
+            // //     alert("current user absent")
+            // // }
+
+
         var  product = JSON.parse(localStorage.getItem("current-product"))
         var divforimage = document.getElementById("product-img");
         var divforname = document.getElementById("name");
@@ -743,6 +764,7 @@
         var divcart = document.getElementById("cart");
         var name = `${product.proName}`;
         var price = `${product.proPrice}`;
+        
         var cart = `<button onclick='addcart(${JSON.stringify(product)})'><i class="fa-solid fa-bag-shopping"></i>ADD TO BAG</button>`;
         var image = `<div><img src="${product.proImage}" /></div><div><img src="${product.proImage}" /></div> <div><img src="${product.proImage}" /></div>`;
         divforname.innerHTML = name;
@@ -750,26 +772,36 @@
         divforimage.innerHTML = image;
         divcart.innerHTML = cart;
     }
-    function addcart(product) {
-        var currentuser = JSON.parse(localStorage.getItem("MyntraCurrentUser"));
-        // console.log(currentuser.uemail);
-        var userdata = JSON.parse(localStorage.getItem("MyntraUsers"));
-        for (var i = 0; i < userdata.length; i++) {
-            if (currentuser.userEmail == userdata[i].userEmail) {
-                alert("got")
-                if (userdata[i].cartproducts === undefined) {
-                    userdata[i].cartproducts = [product];
+    function addcart(product){
+            alert("Adding to cart")
+            var currentUser=JSON.parse(localStorage.getItem("MyntraCurrentUser"));
+            var userData=JSON.parse(localStorage.getItem("MyntraUsers"));
+            var flagforUser=false;
+            for(var i=0;i<userData.length;i++){
+                if(currentUser.userEmail===userData[i].userEmail)
+                {
+                    if(userData[i].cartProducts==undefined)
+                    {
+                        userData[i].cartProducts=[product];
+                    }else
+                    {
+                        userData[i].cartProducts.push(product);
+
+                    }
+                    alert("product added to cart")
+                    window.location.href='./Cart.html';
                 }
-                else {
-                    userdata[i].cartproducts.push(product);
-                }
-                alert("product added to the cart");
-                window.location.href = './Cart.html';
             }
+            localStorage.setItem("MyntraUsers",JSON.stringify(userData));
+        }
+
+    function logout() {
+            alert("Logout successful.")
+            localStorage.removeItem("MyntraCurrentUser")
+            window.location.reload()
+
 
         }
-        localStorage.setItem("MyntraUsers", JSON.stringify(userdata));
-    }
 </script>
 
 </html>
